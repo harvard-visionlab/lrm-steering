@@ -165,7 +165,7 @@ for ix, (images, target) in enumerate(dataloader):
     optimizer.step()        
 ```
 
-The training script for models reported in our neurips2023 paper can be found in the subfolder [train_supervised_steps.py]('neurips2023/train_supervised_steps.py') .
+The training script for models reported in our neurips2023 paper can be found in the subfolder [train_supervised_steps.py](neurips2023/train_supervised_steps.py).
 
 <a name="bibtex"></a>
 ## Citation
@@ -183,4 +183,4 @@ If you find our work or any of our materials useful, please cite our paper:
 ```
 
 ## Acknowledgements
-Our README.md was modeled after Shobhita Sundaram's very nice [deepsim](https://github.com/ssundaram21/dreamsim) repo. Our [model training script]('neurips2023/train_supervised_steps.py') was based off of the [ffcv imagenet example](https://github.com/libffcv/ffcv-imagenet/tree/f134cbfff7f590954edc5c24275444b7dd2f57f6). 
+Our README.md was modeled after Shobhita Sundaram's very nice [deepsim](https://github.com/ssundaram21/dreamsim) repo. Our [model training script](neurips2023/train_supervised_steps.py) was based off of the [ffcv imagenet example](https://github.com/libffcv/ffcv-imagenet/tree/f134cbfff7f590954edc5c24275444b7dd2f57f6). 
