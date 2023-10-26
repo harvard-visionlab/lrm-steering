@@ -164,7 +164,7 @@ for ix, (images, target) in enumerate(dataloader):
     optimizer.step()        
 ```
 
-The training script for models reported in our neurips2023 paper can be found in the subfolder [train_supervised_steps.py]('./neurips2023/train_supervised_steps.py') .
+The training script for models reported in our neurips2023 paper can be found in the subfolder [train_supervised_steps.py]('neurips2023/train_supervised_steps.py') .
 
 <a name="bibtex"></a>
 ## Citation
