@@ -141,7 +141,12 @@ To assess the steerability of our LRM models, we introduced a "composite image c
     </td>
   </tr>
 </table>
-                                                                       
+           
+<p align="center">
+  <img src="images/composite.png" alt="Composite Image"><br>
+  <em>Composite Image Challenge.</em> Three images from different classes are selected. Two of the images are combined to form a composite image. Effective steering should be able to amplify either of the classes that are present (497, 574), but shouldn't hallucinate classes that are absent (e.g., 0).
+</p>
+
 Our [Colab demo](https://colab.research.google.com/drive/1rbb2xDQCmvWB-2UMNV7H8BNaQ5P9aScJ?usp=sharing) demonstrates how to assess LRM models on the composite image challenge.
 
 ## NeurIPS 2023 Code
