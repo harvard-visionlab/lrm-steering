@@ -133,11 +133,11 @@ For an example with actual steering_templates (category prototypes), see our [Co
 ### Composite Image Challenge
 To assess the steerability of our LRM models, we introduced a "composite image challenge" in which images from two separate classes are combined (either side-by-side, or spatially overlapped and blended 50/50). Standard models are unable to classify these images correctly, and typically don't even have the correct classes within the top2. That is, to most models, composite images don't appear to be either class, particularly when the images are overlapping. LRM models can overcome this limitation by "querying" one of the target classes (e.g., steering with the template for classA or classB), and are able to correctly classify the target classes, in some cases approaching the level expected for either image presented alone.
 
-<p align="center">
-  <img src="images/composite.png" alt="Composite Image"><br>
-  <em>Composite Image Challenge.</em> Three images from different classes are selected. Two of the images are combined to form a composite image. Effective steering should be able to amplify either of the classes that are present (497, 574), but shouldn't hallucinate classes that are absent (e.g., 0).
-</p>
-
+<div align="center" width="600px">
+    <img src="images/composite.png" alt="Composite Image Challenge" width="600px">
+    <p><em>Composite Image Challenge.</em> Three images from different classes are selected. Two of the images are combined to form a composite image. Effective steering should be able to amplify either of the classes that are present (497, 574), but shouldn't hallucinate classes that are absent (e.g., 0).</p>
+</div>
+                                                                       
 Our [Colab demo](https://colab.research.google.com/drive/1rbb2xDQCmvWB-2UMNV7H8BNaQ5P9aScJ?usp=sharing) demonstrates how to assess LRM models on the composite image challenge.
 
 ## NeurIPS 2023 Code
