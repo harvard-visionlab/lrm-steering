@@ -29,7 +29,7 @@ Deep neural networks have achieved remarkable success in object recognition task
 * [Cognitive Steering](#cognitive-steering)  
     * [What is Cognitive Steering?](#what-is-cognitive-steering)
     * [SteerableLRM Models](#steerablelrm-models)
-* [NeurIPS 2023 Code](#neurips-2023)
+* [NeurIPS 2023 Code](#neurips-2023-code)
 * [LRM Training](#lrm-training)
 * [Citation](#citation)
 
