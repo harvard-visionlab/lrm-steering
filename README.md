@@ -2,7 +2,7 @@
 
 <!-- ### [Project Page](https://lrm-steering.github.io/) | [Paper](https://arxiv.org/abs/) | [Bibtex](#bibtex) -->
 
-[Paper](https://openreview.net/forum?id=FCIj5KMn2m)
+[Paper](https://openreview.net/forum?id=FCIj5KMn2m) | [Bibtex](#bibtex)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1rbb2xDQCmvWB-2UMNV7H8BNaQ5P9aScJ?usp=sharing)
 
@@ -175,13 +175,12 @@ The training script for models reported in our neurips2023 paper can be found in
 
 If you find our work or any of our materials useful, please cite our paper:
 ```
-@misc{konkle2023lrm,
-      title={Cognitive Steering in Deep Neural Networks via Long-Range Modulatory Feedback Connections}, 
-      author={Talia Konkle & George A. Alvarez},
-      year={2023},
-      eprint={},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{konkle2023cognitive,
+  title={Cognitive Steering in Deep Neural Networks via Long-Range Modulatory Feedback Connections},
+  author={Konkle, Talia and Alvarez, George A},
+  booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+  year={2023}
+  url={https://openreview.net/forum?id=FCIj5KMn2m}
 }
 ```
 
