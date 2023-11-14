@@ -2,7 +2,7 @@
 
 <!-- ### [Project Page](https://lrm-steering.github.io/) | [Paper](https://arxiv.org/abs/) | [Bibtex](#bibtex) -->
 
-[Paper]([https://arxiv.org/abs/](https://openreview.net/forum?id=FCIj5KMn2m))
+[Paper](https://arxiv.org/abs/](https://openreview.net/forum?id=FCIj5KMn2m)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1rbb2xDQCmvWB-2UMNV7H8BNaQ5P9aScJ?usp=sharing)
 
