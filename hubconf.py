@@ -1,7 +1,7 @@
 import torch, torchvision
 import lrm_models as _lrm_models
-
 import lrm_datasets as _lrm_datasets
+import lrm_utils as _lrm_utils
 
 dependencies = ['torch', 'torchvision']
 
@@ -65,3 +65,6 @@ def SteerableLRM(**kwargs):
 
 def datasets(dataset, split, *args, **kwargs):
     return _lrm_datasets.__dict__[dataset](split, *args, **kwargs)
+
+def compute_prototypes():
+    return _lrm_utils.compute_prototypes
