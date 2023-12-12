@@ -1,7 +1,29 @@
+import os
 import torch
+from tqdm import tqdm
+from torch.utils.data import DataLoader
 
-__all__ = ['Stats', 'PrototypeActivationMeter']
+__all__ = ['Stats', 'PrototypeActivationMeter', 'compute_prototypes']
 
+@torch.no_grad()
+def compute_prototypes(model, dataset, batch_size=256, num_workers=len(os.sched_getaffinity(0)), device=None):
+    dataloader = DataLoader(dataset, batch_size=batch_size, num_workers=num_workers,
+                            shuffle=False, pin_memory=True)
+    
+    if device is None: device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print(f"==> computing prototypes using device: {device}")
+    prototype_meter = PrototypeActivationMeter()
+    
+    model.eval()
+    model.to(device)
+    for imgs,labels,indexes in tqdm(dataloader):
+        output = model(imgs.to(device, non_blocking=True))
+
+        for label,activation in zip(labels,output):
+            prototype_meter.update([label.item()], [activation])
+
+    return prototype_meter.state_dict()
+    
 class Stats:
     def __init__(self):
         self.count = None
