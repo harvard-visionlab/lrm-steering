@@ -1,4 +1,6 @@
 from torchvision.datasets import ImageFolder
+from torchvision.datasets.folder import default_loader
+from pathlib import Path
 
 __all__ = ['ImageFolderIndex', 'ImagenetteDatasetRemapIN1K']
 
