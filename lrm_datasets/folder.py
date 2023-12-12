@@ -52,8 +52,8 @@ class ImagenetteDatasetRemapIN1K(object):
         _repr_indent = 4
         head = "Dataset " + self.__class__.__name__
         body = [f"Number of datapoints: {self.__len__()}"]
-        if self.root is not None:
-            body.append(f"Root location: {self.root}")
+        if self.root_dir is not None:
+            body.append(f"Root location: {self.root_dir}")
         body += self.extra_repr().splitlines()
         if hasattr(self, "transforms") and self.transforms is not None:
             body += [repr(self.transforms)]
