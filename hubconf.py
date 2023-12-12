@@ -1,7 +1,7 @@
 import torch, torchvision
 import lrm_models as _lrm_models
 
-import .lrm_datasets as _lrm_datasets
+import lrm_datasets as _lrm_datasets
 
 dependencies = ['torch', 'torchvision']
 
