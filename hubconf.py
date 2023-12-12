@@ -1,7 +1,7 @@
 import torch, torchvision
 import lrm_models as _lrm_models
 
-from . import datasets as _datasets
+import .lrm_datasets as _lrm_datasets
 
 dependencies = ['torch', 'torchvision']
 
@@ -64,4 +64,4 @@ def SteerableLRM(**kwargs):
     return _lrm_models.SteerableLRM
 
 def datasets(dataset, split, *args, **kwargs):
-    return _datasets.__dict__[dataset](split, *args, **kwargs)
+    return _lrm_datasets.__dict__[dataset](split, *args, **kwargs)
