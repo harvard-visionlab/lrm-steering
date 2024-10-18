@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 __all__ = ['Stats', 'PrototypeActivationMeter', 'compute_prototypes']
 
 @torch.no_grad()
-def compute_prototypes(model, dataset, batch_size=256, num_workers=len(os.sched_getaffinity(0)), device=None):
+def compute_prototypes(model, dataset, batch_size=250, num_workers=len(os.sched_getaffinity(0)), device=None):
     dataloader = DataLoader(dataset, batch_size=batch_size, num_workers=num_workers,
                             shuffle=False, pin_memory=True)
     
