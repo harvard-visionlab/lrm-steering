@@ -155,7 +155,7 @@ class SteerableLRM(nn.Module):
             
         if pos_scale_adjust != 1.0 and not hasattr(feedback_module, 'pos_scale_orig'):
             feedback_module.pos_scale_orig = feedback_module.pos_scale
-            feedback_module.pos_scale = nn.Parameter(feedback_module.pos_scale_orig * neg_scale_adjust)
+            feedback_module.pos_scale = nn.Parameter(feedback_module.pos_scale_orig * pos_scale_adjust)
 
     @torch.no_grad()
     def reset_modulation_strengths(self):
