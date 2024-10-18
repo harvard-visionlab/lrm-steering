@@ -75,6 +75,5 @@ def datasets(dataset, split, *args, **kwargs):
 def compute_prototypes():
     return _lrm_utils.compute_prototypes
 
-def load_prototypes(model_name):    
-    data = torch.hub.load_state_dict_from_url(prototype_urls[model_name], map_location='cpu', check_hash=True)
-    return data
+def load_prototypes():    
+    return lambda model_name: torch.hub.load_state_dict_from_url(prototype_urls[model_name], map_location='cpu', check_hash=True)
