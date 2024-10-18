@@ -34,13 +34,18 @@ class FeatureExtractor(nn.Module):
         self.retain = retain
         self._features = {layer: torch.empty(0) for layer in layers}        
         self.hooks = {}
-        
+
+    def drop_features(self):
+        for layer_id in self.layers:
+            self._features[layer_id] = []
+            
     def hook_layers(self):        
         self.remove_hooks()
         for layer_id in self.layers:
             layer = dict([*self.model.named_modules()])[layer_id]
             self.hooks[layer_id] = layer.register_forward_hook(self.save_outputs_hook(layer_id))
-    
+            self._features[layer_id] = []
+            
     def remove_hooks(self):
         for layer_id in self.layers:
             if self.retain == False:
@@ -48,7 +53,7 @@ class FeatureExtractor(nn.Module):
             if layer_id in self.hooks:
                 self.hooks[layer_id].remove()
                 del self.hooks[layer_id]
-    
+                
     def __enter__(self, *args): 
         self.hook_layers()
         return self
@@ -73,7 +78,7 @@ class FeatureExtractor(nn.Module):
             if self.detach: output = detach(output)
             if self.clone: output = clone(output)
             if self.device: output = to_device(output, self.device)
-            self._features[layer_id] = output
+            self._features[layer_id].append(output)
         return fn
 
     def forward(self, x):
