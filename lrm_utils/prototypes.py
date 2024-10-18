@@ -4,7 +4,19 @@ from collections import defaultdict
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 
-__all__ = ['Stats', 'PrototypeActivationMeter', 'compute_prototypes']
+__all__ = ['Stats', 'PrototypeActivationMeter', 'compute_prototypes', 'load_vision_prototypes']
+
+vision_prototypes = dict(
+    alexnet_lrm1="https://github.com/harvard-visionlab/lrm-steering/releases/download/prototypes-v1/visual_prototypes_alexnet_lrm1_40b29a3427-e1282174.pth",
+    alexnet_lrm2="https://github.com/harvard-visionlab/lrm-steering/releases/download/prototypes-v1/visual_prototypes_alexnet_lrm2_17b4229a30-83b9be6e.pth",
+    alexnet_lrm3="https://github.com/harvard-visionlab/lrm-steering/releases/download/prototypes-v1/visual_prototypes_alexnet_lrm3_63ab1b3b06-d59f87e7.pth",
+)
+
+clip_prototypes = dict(
+    alexnet_lrm1="https://github.com/harvard-visionlab/lrm-steering/releases/download/prototypes-v1/clip_diffusion_prototypes_ViT_B16_to_alexnet_lrm1_40b29a3427-8729ac14.pth",
+    alexnet_lrm2="https://github.com/harvard-visionlab/lrm-steering/releases/download/prototypes-v1/clip_diffusion_prototypes_ViT_B16_to_alexnet_lrm2_17b4229a30-97b050f0.pth",
+    alexnet_lrm3="https://github.com/harvard-visionlab/lrm-steering/releases/download/prototypes-v1/clip_diffusion_prototypes_ViT_B16_to_alexnet_lrm3_63ab1b3b06-b710a264.pth",
+)
 
 @torch.no_grad()
 def compute_prototypes(model, dataset, batch_size=250, num_workers=len(os.sched_getaffinity(0)), device=None):
@@ -82,3 +94,20 @@ class PrototypeActivationMeter(object):
                 fmtstr += f'Unit {j}: Mean={self.means[i,j]:.4f}, Std={self.std[i,j]:.4f}; '
             fmtstr += '\n'
         return fmtstr
+
+def load_vision_prototypes(model_name, map_location='cpu', check_hash=True, **kwargs):
+    url = vision_prototypes[model_name]
+    print(f"==> Loading vision_prototypes: {url}")
+    return torch.hub.load_state_dict_from_url(url, 
+                                              map_location=map_location, 
+                                              check_hash=check_hash,
+                                              **kwargs)
+
+def load_clip_prototypes(model_name, map_location='cpu', check_hash=True, **kwargs):
+    url = clip_prototypes[model_name]
+    print(f"==> Loading clip_prototypes: {url}")
+    return torch.hub.load_state_dict_from_url(url, 
+                                              map_location=map_location, 
+                                              check_hash=check_hash,
+                                              **kwargs)
+    
