@@ -9,7 +9,7 @@
 [Talia Konkle](https://konklab.fas.harvard.edu/)\* $^{1,2,3}$, [George A. Alvarez](https://visionlab.harvard.edu/george/)\* $^{1,2,4}$
 (*equal contribution)
 
-$^1$ Harvard University, $^2$ Kempner Institute for the Study of Natural and Artificial Intelligience, $^3$ Center For Brain Science, $^4$ Vision-Sciences Laboratory
+$^1$ Harvard University, $^2$ Kempner Institute for the Study of Natural and Artificial Intelligence, $^3$ Center For Brain Science, $^4$ Vision-Sciences Laboratory
 <br>
 
 ![teaser](images/Figure-LRMmotif.png)
